@@ -79,6 +79,16 @@ func main()  {
 	f := func() {
 		fmt.Println("Hello i am function expression")
 	}
-
 	f()
+
+
+	testCopy := test()()
+
+	fmt.Printf("%T\n", testCopy)
+}
+
+func test() func() int  {
+	return func() int {
+		return 420
+	}
 }
